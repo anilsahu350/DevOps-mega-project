@@ -41,3 +41,5 @@ terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
+.terraform/
+terraform/mega-project-key

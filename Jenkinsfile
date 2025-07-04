@@ -8,8 +8,8 @@ pipeline {
     environment {
         SONAR_HOME = tool "Sonar"
         DOCKER_IMAGE = "bankapp"
-        GIT_REPO = "https://github.com/Amitabh-DevOps/DevOps-mega-project.git"
-        GIT_BRANCH = "project"
+        GIT_REPO = "https://github.com/anilsahu350/DevOps-mega-project.git"
+        GIT_BRANCH = "feature/devsecops"
     }
     stages {
         stage("Clean Workspace") {
@@ -20,7 +20,7 @@ pipeline {
         stage("Code Clone") {
             steps {
                 script {
-                    code_checkout("https://github.com/Amitabh-DevOps/DevOps-mega-project.git", "project")
+                    code_checkout("https://github.com/Amitabh-DevOps/DevOps-mega-project.git", " feature/devsecops")
                 }
             }
         }
@@ -46,12 +46,12 @@ pipeline {
         }
         stage("Docker Build") {
             steps {
-                docker_build("bankapp", "${params.DOCKER_TAG}", "amitabhdevops")
+                docker_build("bankapp", "${params.DOCKER_TAG}", "anilsahu350")
             }
         }
         stage("Push to Docker Hub") {
             steps {
-                docker_push("bankapp", "${params.DOCKER_TAG}", "amitabhdevops")
+                docker_push("bankapp", "${params.DOCKER_TAG}", "anilsahu350")
             }
         }
     }
@@ -92,7 +92,7 @@ pipeline {
                         </p>
                     </div>
                 """,
-                to: "amitabhdevops2024@gmail.com",
+                to: "anilsahu350@gmail.com",
                 from: "jenkins@example.com",
                 mimeType: 'text/html',
                 attachmentsPattern: '**/table-report.html'  // This will pick up the report from the workspace
@@ -134,7 +134,7 @@ pipeline {
                         </p>
                     </div>
                 """,
-                to: "amitabhdevops2024@gmail.com",
+                to: "anilsahu350@gmail.com",
                 from: "jenkins@example.com",
                 mimeType: 'text/html',
                 attachmentsPattern: '**/table-report.html'  // This will pick up the report from the workspace
