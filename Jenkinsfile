@@ -20,7 +20,7 @@ pipeline {
         stage("Code Clone") {
             steps {
                 script {
-                    code_checkout("https://github.com/Amitabh-DevOps/DevOps-mega-project.git", " feature/devsecops")
+                    code_checkout("https://github.com/anilsahu350/DevOps-mega-project.git", "feature/devsecops")
                 }
             }
         }
@@ -93,9 +93,8 @@ pipeline {
                     </div>
                 """,
                 to: "anilsahu350@gmail.com",
-                from: "jenkins@example.com",
                 mimeType: 'text/html',
-                attachmentsPattern: '**/table-report.html'  // This will pick up the report from the workspace
+                attachmentsPattern: '**/table-report.html'  // Will attach if file exists
             )
         }
         failure {
@@ -135,9 +134,8 @@ pipeline {
                     </div>
                 """,
                 to: "anilsahu350@gmail.com",
-                from: "jenkins@example.com",
                 mimeType: 'text/html',
-                attachmentsPattern: '**/table-report.html'  // This will pick up the report from the workspace
+                attachmentsPattern: '**/table-report.html'
             )
         }
     }
